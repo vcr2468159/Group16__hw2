@@ -33,7 +33,7 @@ public class enemyOneControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        e_naviagent.SetDestination(player.transform.position);
+        //e_naviagent.SetDestination(player.transform.position);
 
         /*if(Input.GetKeyDown(KeyCode.Space))
         {
