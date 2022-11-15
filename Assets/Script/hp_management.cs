@@ -8,6 +8,7 @@ public class hp_management : MonoBehaviour
     public float hp;
     private int enemyLayer = 7;
     private int playerLayer = 6;
+    public GameObject stageManager;
     private GameObject dontDestroy;
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,8 @@ public class hp_management : MonoBehaviour
             //Debug.Log(dontDestroy);
             hp = dontDestroy.GetComponent<DontDestroy>().getPlayerHealth();
         }
+
+        stageManager = GameObject.Find("StageManager");
     }
 
     // Update is called once per frame
@@ -50,6 +53,8 @@ public class hp_management : MonoBehaviour
             if (this.gameObject.layer == enemyLayer)
             {
                 // score
+                // call stage manager to check if stage switching needed
+                stageManager.GetComponent<StageManager>().enemyKilled();
             }
             else if (this.gameObject.layer == playerLayer)
             {
