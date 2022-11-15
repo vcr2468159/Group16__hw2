@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 831555082159354664}
   - component: {fileID: 831555082159354663}
   - component: {fileID: 831555082159354660}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,6 +148,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   bullet: {fileID: 4863272791106137490, guid: f59dd2d78e04d364ba6245c94e9b6d55, type: 3}
+  offset: 5
   healthSliderCon: {fileID: 0}
 --- !u!1 &4786443672177684471
 GameObject:
@@ -161,7 +162,7 @@ GameObject:
   - component: {fileID: 4786443672177684363}
   - component: {fileID: 4786443672177684362}
   - component: {fileID: 4786443672177684469}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: EnemyTwoCanva
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +259,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4232285282303623915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: healthBarPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}

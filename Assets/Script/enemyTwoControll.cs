@@ -10,8 +10,10 @@ public class enemyTwoControll : MonoBehaviour
     public Vector3 direction;
     public GameObject player;
     public GameObject bullet;
+    public float offset = 1.0f;
     GameObject prefab;
     Transform cam;
+    Vector3 playerTrans;
     float rate = 0.5f;//the frequency of bullet
 
     private Rigidbody rb;
@@ -37,15 +39,18 @@ public class enemyTwoControll : MonoBehaviour
             healthSliderCon.fillAmount = sliderPercent;
         }*/
 
-        direction = player.transform.position - this.transform.position;
+        playerTrans = player.transform.position;
+        //playerTrans += new Vector3(0, offset, 0);
+        this.transform.forward = playerTrans - this.transform.position;
+        //this.transform.forward = new Vector3(this.transform.forward.x, 0, this.transform.forward.z);
 
         rate -= Time.deltaTime;
         if(rate<=0){
             rate = 0.5f;
-            prefab = Instantiate(bullet, this.transform);
-            prefab.GetComponent<Rigidbody>().AddForce(direction * 500.0f);
+            prefab = Instantiate(bullet, this.transform.position + new Vector3(0, offset, 0), this.transform.rotation);
+            print(this.transform.forward);
+            prefab.GetComponent<Rigidbody>().AddForce(this.transform.forward * 300.0f);
         }
-        this.transform.forward = direction;
 
         if(currentHealth <= 0)
         {
