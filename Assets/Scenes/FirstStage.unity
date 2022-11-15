@@ -18376,6 +18376,6 @@ PrefabInstance:
     - target: {fileID: 6723650891162229618, guid: 112933b585a683c499b8d450df913b44, type: 3}
       propertyPath: CinemachineCameraTarget
       value: 
-      objectReference: {fileID: 374246296}
+      objectReference: {fileID: 1890373201}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112933b585a683c499b8d450df913b44, type: 3}
