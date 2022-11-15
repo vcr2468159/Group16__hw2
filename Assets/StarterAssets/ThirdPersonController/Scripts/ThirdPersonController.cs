@@ -380,9 +380,13 @@ namespace StarterAssets
                 }
             }
             animState = _animator.GetCurrentAnimatorStateInfo(0);
-            if (animState.fullPathHash == _animStateAttack)
+            if (animState.fullPathHash == _animStateAttack && Grounded)
             {
                 lockMoving = true;
+                /*if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, false);
+                }*/
             }
         }
 
