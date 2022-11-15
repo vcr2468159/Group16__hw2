@@ -14459,13 +14459,13 @@ MonoBehaviour:
   LandingAudioClip: {fileID: 0}
   FootstepAudioClips: []
   FootstepAudioVolume: 0.5
-  JumpHeight: 12
-  Gravity: -15
+  JumpHeight: 6
+  Gravity: -75
   JumpTimeout: 0.5
   FallTimeout: 0.15
   Grounded: 1
   GroundedOffset: -0.14
-  GroundedRadius: 0.28
+  GroundedRadius: 0.5
   GroundLayers:
     serializedVersion: 2
     m_Bits: 128
