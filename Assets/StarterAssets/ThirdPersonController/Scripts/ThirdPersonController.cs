@@ -97,6 +97,11 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDAttack;
+        private int _animStateAttack;
+
+        private AnimatorStateInfo animState;
+        private bool lockMoving;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -158,9 +163,11 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
+            lockMoving = false;
 
             JumpAndGravity();
             GroundedCheck();
+            Attack();
             Move();
         }
 
@@ -176,6 +183,8 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDAttack = Animator.StringToHash("Attack");
+            _animStateAttack = Animator.StringToHash("Base Layer.Attack01");
         }
 
         private void GroundedCheck()
@@ -270,9 +279,12 @@ namespace StarterAssets
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            // move the player
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            if (!lockMoving)
+            {
+                // move the player
+                _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+                                new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            }
 
             // update animator if using character
             if (_hasAnimator)
@@ -348,6 +360,29 @@ namespace StarterAssets
             if (_verticalVelocity < _terminalVelocity)
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
+            }
+        }
+
+        private void Attack()
+        {
+            if (_input.attack)
+            {
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, true);
+                }
+            }
+            else
+            {
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, false);
+                }
+            }
+            animState = _animator.GetCurrentAnimatorStateInfo(0);
+            if (animState.fullPathHash == _animStateAttack)
+            {
+                lockMoving = true;
             }
         }
 
