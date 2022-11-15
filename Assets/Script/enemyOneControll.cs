@@ -28,7 +28,6 @@ public class enemyOneControll : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
         healthSliderCon = HealthBarUI.healthSlider;
-        //GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -36,13 +35,13 @@ public class enemyOneControll : MonoBehaviour
     {
         e_naviagent.SetDestination(player.transform.position);
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        /*if(Input.GetKeyDown(KeyCode.Space))
         {
             //print("sdfghjk");
             currentHealth -= 10;
             float sliderPercent = (float)currentHealth / maxHealth;
             healthSliderCon.fillAmount = sliderPercent;
-        }
+        }*/
 
         if(currentHealth <= 0)
         {

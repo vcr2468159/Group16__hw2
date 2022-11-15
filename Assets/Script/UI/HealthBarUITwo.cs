@@ -4,7 +4,7 @@ using UnityEngine;
 
 using UnityEngine.UI;
 
-public class HealthBarUI : MonoBehaviour
+public class HealthBarUITwo : MonoBehaviour
 {
     public GameObject healthUIPrefab;
     public Transform barPoint;
@@ -24,11 +24,11 @@ public class HealthBarUI : MonoBehaviour
     {
         cam = Camera.main.transform;
     
-        canvas = GameObject.Find("HealthBarCanvas");    
+        canvas = gameObject.transform.GetChild(0).gameObject;
         UIbar = Instantiate(healthUIPrefab, canvas.transform);
         UIbarTransform =  UIbar.transform;
         healthSlider = UIbarTransform.GetChild(0).GetComponent<Image>();
-        //UIbar.gameObject.SetActive(true);
+        UIbar.gameObject.SetActive(true);
     }
 
     
@@ -49,6 +49,7 @@ public class HealthBarUI : MonoBehaviour
             UIbarTransform.position = barPoint.position;
             UIbarTransform.forward = -cam.forward;
         }
+        
     }
 
 }
