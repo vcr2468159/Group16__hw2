@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public class enemyTwoControll : MonoBehaviour
 {
-    public GameObject player;
     public Vector3 direction;
     public GameObject bullet;
     GameObject prefab;
