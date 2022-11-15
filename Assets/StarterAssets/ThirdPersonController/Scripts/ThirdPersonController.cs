@@ -141,7 +141,7 @@ namespace StarterAssets
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
             Debug.Log("Start");
-            Debug.Log(_input);
+            Debug.Log(_hasAnimator);
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
             _playerInput = GetComponent<PlayerInput>();
 #else

@@ -8,7 +8,6 @@ public class healBottle : MonoBehaviour
     {
         if(other.tag == "player"){
             Destroy(gameObject);
-            
         }
     }
 }
