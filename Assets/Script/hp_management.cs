@@ -11,6 +11,10 @@ public class hp_management : MonoBehaviour
     public GameObject hpBar;
     public GameObject stageManager;
     private GameObject dontDestroy;
+
+    public AudioSource audioSource;
+    public AudioClip hurtSFX;
+    public AudioClip healSFX;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,11 +49,13 @@ public class hp_management : MonoBehaviour
     public void hurt(float dmg)
     {
         hp -= dmg;
+        audioSource.PlayOneShot(hurtSFX, 1.0f);
 
         if (this.gameObject.layer == playerLayer)
         {
             if (dontDestroy)
                 dontDestroy.GetComponent<DontDestroy>().playerGetDamage(dmg);
+            
         }
 
         if (hpBar)
@@ -74,5 +80,25 @@ public class hp_management : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
+    }
+    public void Heal(float heal_num)
+    {
+        if(hp + heal_num <= maxHP)hp += heal_num;
+        else hp = maxHP;
+        audioSource.PlayOneShot(healSFX, 1.0f);
+
+        if (this.gameObject.layer == playerLayer)
+        {
+            if (dontDestroy)
+                dontDestroy.GetComponent<DontDestroy>().PlayerGetHeal(heal_num,maxHP);
+        }
+
+        if (hpBar)
+        {
+            hpBar.GetComponent<HealthBarUI>().UpdateHealthBar(hp, maxHP);
+        }
+        
+        // play particle effect
+        // play sound effect
     }
 }

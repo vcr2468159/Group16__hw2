@@ -41,6 +41,14 @@ public class DontDestroy : MonoBehaviour
         }
     }
 
+    public void PlayerGetHeal(float heal_num, float maxHP){
+        if(playerHealth + heal_num <= maxHP){
+            playerHealth = playerHealth + heal_num;
+        }else{
+            playerHealth = maxHP;
+        }
+    }
+
     public float getPlayerHealth(){
         return playerHealth;
     }

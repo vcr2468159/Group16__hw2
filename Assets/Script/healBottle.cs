@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class healBottle : MonoBehaviour
 {
+    public float heal_num;
+
     void OnTriggerEnter (Collider other)
     {
-        if(other.tag == "player"){
+        if(other.tag == "Player"){
             Destroy(gameObject);
+            other.GetComponent<hp_management>().Heal(heal_num);
         }
     }
 }

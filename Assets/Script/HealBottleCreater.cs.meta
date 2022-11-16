@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 3dbecd911513d864694c0ea8589231dd
+guid: 646063abc1e918c4ebcea0ef5d06f2e6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - healItem: {fileID: 3910611459014175867, guid: 3a1cf4f8d428cd543ad1c929077bb458, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
