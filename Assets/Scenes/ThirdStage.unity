@@ -30893,9 +30893,9 @@ MonoBehaviour:
   hp: 0
   hpBar: {fileID: 97895990}
   stageManager: {fileID: 0}
-  audioSource: {fileID: 0}
-  hurtSFX: {fileID: 0}
-  healSFX: {fileID: 0}
+  audioSource: {fileID: 879106641}
+  hurtSFX: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+  healSFX: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
 --- !u!54 &1836434923
 Rigidbody:
   m_ObjectHideFlags: 0

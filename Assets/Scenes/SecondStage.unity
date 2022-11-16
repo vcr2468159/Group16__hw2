@@ -4250,11 +4250,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 58c7a4c3286e2d44485b9714d1abb6cb, type: 3}
---- !u!1 &415003600 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9083342199141613257, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
-  m_PrefabInstance: {fileID: 1433260846}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &422344731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7508,30 +7503,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &706184985 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2178069799792281877, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
-  m_PrefabInstance: {fileID: 1433260846}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &706184992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706184985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ac82644deeab3458cdbfcc78c962c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 100
-  hp: 0
-  hpBar: {fileID: 415003600}
-  stageManager: {fileID: 0}
-  audioSource: {fileID: 0}
-  hurtSFX: {fileID: 0}
-  healSFX: {fileID: 0}
 --- !u!1001 &707601423
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7945,11 +7916,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!1 &728835778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9083342199141613257, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
-  m_PrefabInstance: {fileID: 2178069798282774802}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &734057106
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16429,6 +16395,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: healSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: hurtSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 379664335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
 --- !u!1001 &1433967250
@@ -19220,30 +19198,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7938220125013333060, guid: 112933b585a683c499b8d450df913b44, type: 3}
   m_PrefabInstance: {fileID: 1180255936}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1711718407 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2178069799792281877, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
-  m_PrefabInstance: {fileID: 2178069798282774802}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1711718414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1711718407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53ac82644deeab3458cdbfcc78c962c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 100
-  hp: 0
-  hpBar: {fileID: 728835778}
-  stageManager: {fileID: 0}
-  audioSource: {fileID: 0}
-  hurtSFX: {fileID: 0}
-  healSFX: {fileID: 0}
 --- !u!1001 &1712030006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24664,5 +24618,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: healSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 35fbad8cdde724f11ba6481f1e64af71, type: 3}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: hurtSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 7127315323545125804, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 379664335}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdcb5800e3a4a1c4b95155380fb2c8e6, type: 3}
