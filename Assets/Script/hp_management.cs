@@ -67,6 +67,7 @@ public class hp_management : MonoBehaviour
         
         // play particle effect
         // play sound effect
+        this.GetComponentInChildren<ParticleSystem>().Play();
 
         if (hp <= 0)
         {
