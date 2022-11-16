@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class hp_management : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class hp_management : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip hurtSFX;
     public AudioClip healSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,7 +27,7 @@ public class hp_management : MonoBehaviour
             GameObject[] objs = GameObject.FindGameObjectsWithTag("DontDestroy");
             if (objs.Length > 1)
             {
-                Debug.LogError("Multiple DontDestroy Object!");
+                Debug.Log("Multiple DontDestroy Object!");
             }
             dontDestroy = objs[0];
             //Debug.Log(dontDestroy);
@@ -77,6 +79,8 @@ public class hp_management : MonoBehaviour
             else if (this.gameObject.layer == playerLayer)
             {
                 // restart
+                dontDestroy.GetComponent<DontDestroy>().setPlayerHealth(100f);
+                stageManager.GetComponent<StageManager>().playerDie();
             }
             Destroy(this.gameObject);
         }
