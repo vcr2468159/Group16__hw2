@@ -6584,15 +6584,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1931508858242935557, guid: 112933b585a683c499b8d450df913b44, type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 348905686}
     - target: {fileID: 1931508858242935558, guid: 112933b585a683c499b8d450df913b44, type: 3}
       propertyPath: m_Name
       value: DogPBR
       objectReference: {fileID: 0}
+    - target: {fileID: 5325997254666776833, guid: 112933b585a683c499b8d450df913b44, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 879106639}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 112933b585a683c499b8d450df913b44, type: 3}
 --- !u!4 &348905685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7938220125013333060, guid: 112933b585a683c499b8d450df913b44, type: 3}
+  m_PrefabInstance: {fileID: 348905684}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &348905686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2692421556372450165, guid: 112933b585a683c499b8d450df913b44, type: 3}
   m_PrefabInstance: {fileID: 348905684}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &359823750
@@ -14791,6 +14804,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c98fbdff277093448721b68e8593138, type: 3}
+--- !u!20 &879106639 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 6878087749121648779, guid: 2c98fbdff277093448721b68e8593138, type: 3}
+  m_PrefabInstance: {fileID: 879106638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &879891597
 PrefabInstance:
   m_ObjectHideFlags: 0

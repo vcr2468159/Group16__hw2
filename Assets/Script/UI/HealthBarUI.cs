@@ -7,7 +7,7 @@ public class HealthBarUI : MonoBehaviour
 {
     /*public GameObject healthUIPrefab;
     public Transform barPoint;*/
-    public Image healthSlider;
+    private Image healthSlider;
     
     //int currentHealth;
     

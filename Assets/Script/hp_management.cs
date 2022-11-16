@@ -29,6 +29,11 @@ public class hp_management : MonoBehaviour
         }
 
         stageManager = GameObject.Find("StageManager");
+
+        if (hpBar)
+        {
+            hpBar.GetComponent<HealthBarUI>().UpdateHealthBar(hp, maxHP);
+        }
     }
 
     // Update is called once per frame
@@ -43,7 +48,8 @@ public class hp_management : MonoBehaviour
 
         if (this.gameObject.layer == playerLayer)
         {
-            dontDestroy.GetComponent<DontDestroy>().playerGetDamage(dmg);
+            if (dontDestroy)
+                dontDestroy.GetComponent<DontDestroy>().playerGetDamage(dmg);
         }
 
         if (hpBar)
