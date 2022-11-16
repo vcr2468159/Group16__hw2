@@ -8,6 +8,7 @@ public class hp_management : MonoBehaviour
     public float hp;
     private int enemyLayer = 7;
     private int playerLayer = 6;
+    public GameObject hpBar;
     public GameObject stageManager;
     private GameObject dontDestroy;
     // Start is called before the first frame update
@@ -43,6 +44,11 @@ public class hp_management : MonoBehaviour
         if (this.gameObject.layer == playerLayer)
         {
             dontDestroy.GetComponent<DontDestroy>().playerGetDamage(dmg);
+        }
+
+        if (hpBar)
+        {
+            hpBar.GetComponent<HealthBarUI>().UpdateHealthBar(hp, maxHP);
         }
         
         // play particle effect

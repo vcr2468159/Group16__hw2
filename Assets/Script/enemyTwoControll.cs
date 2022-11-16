@@ -25,7 +25,7 @@ public class enemyTwoControll : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        healthSliderCon = HealthBarUI.healthSlider;
+        //healthSliderCon = HealthBarUI.healthSlider;
         cam = Camera.main.transform;
     }
 
