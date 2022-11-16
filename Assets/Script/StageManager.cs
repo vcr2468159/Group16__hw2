@@ -7,6 +7,7 @@ public class StageManager : MonoBehaviour
 {
     public int numberOfEnemies = 2;
     public string nextStage;
+    public string nowStage;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class StageManager : MonoBehaviour
         {
             SceneManager.LoadScene(nextStage);
         }
+    }
+
+    public void playerDie()
+    {
+        SceneManager.LoadScene(nowStage);
     }
 }
