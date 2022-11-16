@@ -25,19 +25,21 @@ public class enemyTwoControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        playerPos = player.transform.position;
-        playerPos.y += playerHeight / 2;
-        myPosition = this.transform.position;
-        myPosition.y += this.gameObject.GetComponent<CapsuleCollider>().height / 2;
-        this.transform.forward = playerPos - myPosition;
-
-        timeout -= Time.deltaTime;
-        if(timeout <= 0)
+        if (player)
         {
-            timeout = fireRate;
-            firedBullet = Instantiate(bulletPrefab, myPosition + this.transform.forward * offset, this.transform.rotation);
-            //print(this.transform.forward);
+            playerPos = player.transform.position;
+            playerPos.y += playerHeight / 2;
+            myPosition = this.transform.position;
+            myPosition.y += this.gameObject.GetComponent<CapsuleCollider>().height / 2;
+            this.transform.forward = playerPos - myPosition;
+
+            timeout -= Time.deltaTime;
+            if(timeout <= 0)
+            {
+                timeout = fireRate;
+                firedBullet = Instantiate(bulletPrefab, myPosition + this.transform.forward * offset, this.transform.rotation);
+                //print(this.transform.forward);
+            }
         }
     }
 }

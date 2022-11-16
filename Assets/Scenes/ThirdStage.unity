@@ -10225,7 +10225,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 405850, guid: 5601521e5fc5f7743993db1ebd891042, type: 3}
   m_PrefabInstance: {fileID: 557055671}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &567809666
 GameObject:
   m_ObjectHideFlags: 0
@@ -10347,8 +10346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> a7f85d1b4ec87de553b0f228439d8b409d432413
 --- !u!1001 &572551051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11563,7 +11560,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 409328, guid: e1e020ca14b039847905ba13f31b33be, type: 3}
   m_PrefabInstance: {fileID: 638734839}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &648588414
 GameObject:
   m_ObjectHideFlags: 0
@@ -11693,8 +11689,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-=======
->>>>>>> a7f85d1b4ec87de553b0f228439d8b409d432413
 --- !u!1001 &649179593
 PrefabInstance:
   m_ObjectHideFlags: 0
