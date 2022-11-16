@@ -41,7 +41,7 @@ namespace StarterAssets
 
         [Space(10)]
         [Tooltip("Time required to pass before being able to jump again. Set to 0f to instantly jump again")]
-        public float JumpTimeout = 0.50f;
+        public float JumpTimeout = 0.40f;
 
         [Tooltip("Time required to pass before entering the fall state. Useful for walking down stairs")]
         public float FallTimeout = 0.15f;
@@ -97,6 +97,12 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDAttack;
+        private int _animStateAttack;
+
+        private AnimatorStateInfo animState;
+        private bool lockMoving;
+        private int enemyLayer = 7;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -105,6 +111,7 @@ namespace StarterAssets
         private CharacterController _controller;
         private StarterAssetsInputs _input;
         private GameObject _mainCamera;
+        private SphereCollider _attackCollider;
 
         private const float _threshold = 0.01f;
 
@@ -141,9 +148,10 @@ namespace StarterAssets
             _controller = GetComponent<CharacterController>();
             _input = GetComponent<StarterAssetsInputs>();
             Debug.Log("Start");
-            Debug.Log(_input);
+            Debug.Log(_hasAnimator);
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
             _playerInput = GetComponent<PlayerInput>();
+            _attackCollider = GetComponent<SphereCollider>();
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
@@ -158,9 +166,11 @@ namespace StarterAssets
         private void Update()
         {
             _hasAnimator = TryGetComponent(out _animator);
+            lockMoving = false;
 
             JumpAndGravity();
             GroundedCheck();
+            Attack();
             Move();
         }
 
@@ -176,6 +186,8 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDAttack = Animator.StringToHash("Attack");
+            _animStateAttack = Animator.StringToHash("Base Layer.Attack01");
         }
 
         private void GroundedCheck()
@@ -270,9 +282,12 @@ namespace StarterAssets
 
             Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
-            // move the player
-            _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
-                             new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            if (!lockMoving)
+            {
+                // move the player
+                _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) +
+                                new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
+            }
 
             // update animator if using character
             if (_hasAnimator)
@@ -349,6 +364,57 @@ namespace StarterAssets
             {
                 _verticalVelocity += Gravity * Time.deltaTime;
             }
+        }
+
+        private void Attack()
+        {
+            //_attackCollider.enabled = false;
+            if (_input.attack)
+            {
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, true);
+                }
+            }
+            else
+            {
+                if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, false);
+                }
+            }
+            animState = _animator.GetCurrentAnimatorStateInfo(0);
+            if (animState.fullPathHash == _animStateAttack)
+            {
+                if (Grounded)
+                {
+                    lockMoving = true;
+                }
+                _attackCollider.enabled = true;
+                /*if (_hasAnimator)
+                {
+                    _animator.SetBool(_animIDAttack, false);
+                }*/
+            }
+            else
+            {
+                _attackCollider.enabled = false;
+            }
+        }
+
+        // Attack Detection
+        private void OnTriggerEnter(Collider other)
+        {
+            if (_attackCollider.enabled)
+            {
+                if (other.gameObject.layer == enemyLayer)
+                {
+                    //Debug.Log("hit");
+                    Debug.Log(other);
+                    other.gameObject.GetComponent<hp_management>().hurt(50);
+                }
+            }
+            //Debug.Log(other);
         }
 
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
