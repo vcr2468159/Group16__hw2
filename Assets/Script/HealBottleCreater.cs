@@ -11,7 +11,7 @@ public class HealBottleCreater : MonoBehaviour
     void Ins_Objs()
     {
         Instantiate(healItem , 
-        PlayerPos.transform.position+new Vector3(Random.Range(-10f,10f),2f,Random.Range(-10f,10f)),
+        PlayerPos.transform.position+new Vector3(Random.Range(-20f,20f),2f,Random.Range(-20f,20f)),
         healItem.transform.rotation);
     }
 

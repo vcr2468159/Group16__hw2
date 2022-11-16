@@ -77,6 +77,7 @@ namespace StarterAssets
 
         public AudioSource audioSource;
         public AudioClip AttackSFX;
+        public AudioClip HitSFX;
 
         // cinemachine
         private float _cinemachineTargetYaw;
@@ -414,6 +415,7 @@ namespace StarterAssets
                 {
                     //Debug.Log("hit");
                     Debug.Log(other);
+                    audioSource.PlayOneShot(HitSFX,1.0f);
                     other.gameObject.GetComponent<hp_management>().hurt(50);
                 }
             }

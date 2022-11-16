@@ -14220,6 +14220,10 @@ PrefabInstance:
       value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 7938220125281408414, guid: 112933b585a683c499b8d450df913b44, type: 3}
+      propertyPath: HitSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 7e26c9daf4c32483b9c2790e662d3f1b, type: 3}
+    - target: {fileID: 7938220125281408414, guid: 112933b585a683c499b8d450df913b44, type: 3}
       propertyPath: AttackSFX
       value: 
       objectReference: {fileID: 8300000, guid: d46323e22e74e46baa241cbf48c85671, type: 3}
