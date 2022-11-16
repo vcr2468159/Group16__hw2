@@ -3591,7 +3591,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &375571454
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,8 +3784,6 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
-=======
->>>>>>> a7f85d1b4ec87de553b0f228439d8b409d432413
 --- !u!1001 &382494623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11115,11 +11112,7 @@ GameObject:
   - component: {fileID: 972789375}
   - component: {fileID: 972789374}
   - component: {fileID: 972789373}
-<<<<<<< HEAD
-  m_Layer: 0
-=======
   m_Layer: 3
->>>>>>> a7f85d1b4ec87de553b0f228439d8b409d432413
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14919,7 +14912,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: ff08ab2a0c6779b4e9aafcbef8d20778, type: 3}
-<<<<<<< HEAD
 --- !u!1 &1277356453
 GameObject:
   m_ObjectHideFlags: 0
@@ -14951,8 +14943,6 @@ Transform:
   m_Father: {fileID: 1701588711}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
->>>>>>> a7f85d1b4ec87de553b0f228439d8b409d432413
 --- !u!1001 &1281492662
 PrefabInstance:
   m_ObjectHideFlags: 0
